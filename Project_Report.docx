@@ -1,0 +1,383 @@
+Applied Software Project Report
+
+BookMyShow Clone: A Modern Movie Ticket Booking Platform
+
+By 
+[Full Name of the Student]
+
+A Master's Project Report submitted to Scaler Neovarsity - Woolf in partial fulfillment of the requirements for the degree of Master of Science in Computer Science
+
+[Month of Submission]
+
+Scaler Mentee Email ID: [Registered Scaler Email ID]
+Thesis Supervisor: Naman Bhalla
+Date of Submission: [DD/MM/YYYY]
+
+[Certification and Declaration pages as per template]
+
+ACKNOWLEDGMENT
+
+I would like to express my sincere gratitude to my project supervisor, Naman Bhalla, for his invaluable guidance and continuous support throughout this project. His expertise and insights have been instrumental in shaping this work. I am also grateful to the Scaler instructors and teaching assistants who have contributed to my learning journey.
+
+Special thanks to my family for their unwavering support and encouragement throughout my academic pursuits. Their patience and understanding have been crucial in helping me balance my studies with other responsibilities.
+
+I would also like to acknowledge my peers at Scaler for their collaborative spirit and the engaging discussions that have enhanced my understanding of software development.
+
+Abstract
+
+This applied software project presents the development of a comprehensive movie ticket booking platform, inspired by BookMyShow. The project implements a full-stack web application using the MERN (MongoDB, Express.js, React, Node.js) stack, incorporating modern software development practices and industry-standard security measures.
+
+The platform facilitates seamless movie ticket booking experiences for users while providing theater partners with efficient management tools and administrators with robust control mechanisms. Key features include user authentication, movie and theater management, show scheduling, seat selection, secure payment processing, and automated email notifications.
+
+The project demonstrates practical implementation of crucial e-commerce functionalities including secure payment gateway integration (Razorpay), cloud storage for media files (AWS S3), and real-time email notifications. The system's architecture emphasizes scalability, security, and user experience, making it suitable for real-world deployment.
+
+Project Description
+
+The BookMyShow Clone is a comprehensive movie ticket booking platform that connects moviegoers with theaters while providing a seamless booking experience. The project implements three distinct user roles:
+
+1. Regular Users: Can browse movies, book tickets, and manage their bookings
+2. Theater Partners: Can manage their theaters, shows, and view revenue
+3. Administrators: Have overall system control and approval authority
+
+Figure 1.1: System Architecture
+[Insert system_architecture.txt diagram]
+
+The system architecture follows a three-tier design pattern:
+1. Client Layer (Frontend):
+   - React.js application
+   - Redux for state management
+   - Material UI components
+   - React Router for navigation
+
+2. Application Layer:
+   - Express.js REST API
+   - Authentication middleware
+   - Business logic implementation
+   - External service integration
+
+3. Data Layer:
+   - MongoDB database
+   - AWS S3 storage
+   - Cache management
+   - Data persistence
+
+Figure 1.2: Database Schema
+[Insert database_schema.txt diagram]
+
+The database schema illustrates the relationships between different entities in the system:
+1. User-Theater Relationship:
+   - One-to-many relationship between Partner and Theater
+   - Partners can manage multiple theaters
+   - Admins can approve/reject theaters
+
+2. Movie-Show Relationship:
+   - One-to-many relationship
+   - Movies can have multiple shows
+   - Shows are linked to specific theaters
+
+3. Booking-Payment Relationship:
+   - One-to-one relationship
+   - Each booking has associated payment information
+   - Payment status tracking
+
+Figure 1.3: Use Case Diagram
+[Insert use_case.txt diagram]
+
+The use case diagram demonstrates the system's core functionalities for different user roles:
+
+1. Regular Users:
+   - Account Management
+     * Registration and login
+     * Profile updates
+     * Password management
+   - Movie Experience
+     * Browse available movies
+     * View movie details and trailers
+     * Read and write reviews
+   - Booking Process
+     * Select show timings
+     * Choose seats
+     * Make payments
+     * View booking history
+
+2. Theater Partners:
+   - Theater Management
+     * Register new theaters
+     * Update theater details
+     * Manage screens and seating
+   - Show Management
+     * Schedule new shows
+     * Update show timings
+     * Set ticket pricing
+   - Business Analytics
+     * View booking statistics
+     * Generate revenue reports
+     * Track performance metrics
+
+3. Administrators:
+   - System Management
+     * User management
+     * Content moderation
+     * System configuration
+   - Approval Process
+     * Theater verification
+     * Partner validation
+     * Content approval
+   - Monitoring
+     * System performance
+     * User activities
+     * Security alerts
+
+[Continue with the rest of the sections, adding more detailed implementation details, screenshots, and technical specifications]
+
+Technical Implementation Details
+
+1. Frontend Architecture
+   Figure 2.1: Component Hierarchy
+   [Add component tree diagram]
+
+   a. Core Components
+      - Reusable UI components
+      - Form components
+      - Layout components
+      - Modal components
+
+   b. State Management
+      - Redux store configuration
+      - Action creators
+      - Reducers
+      - Middleware
+
+   c. Routing System
+      - Protected routes
+      - Role-based access
+      - Navigation guards
+
+2. Backend Architecture
+   Figure 2.2: API Structure
+   [Add API structure diagram]
+
+   a. API Endpoints
+      - Authentication routes
+      - Movie management
+      - Theater operations
+      - Booking system
+
+   b. Middleware Stack
+      - Authentication
+      - Validation
+      - Error handling
+      - Rate limiting
+
+   c. Database Operations
+      - CRUD operations
+      - Aggregation pipelines
+      - Index optimization
+
+3. Security Implementation
+   Figure 2.3: Security Architecture
+   [Add security flow diagram]
+
+   a. Authentication System
+      - JWT implementation
+      - Token management
+      - Session handling
+
+   b. Data Protection
+      - Password hashing
+      - Data encryption
+      - Input sanitization
+
+   c. API Security
+      - Rate limiting
+      - CORS policy
+      - Request validation
+
+[Continue with more sections on Testing, Deployment, Performance Optimization, etc.]
+
+[Add screenshots of the actual application]
+[Add code snippets for key implementations]
+[Add performance metrics and testing results]
+[Add deployment diagrams and configuration details]
+
+[The report should continue with more technical details, implementation specifics, and visual aids to reach the 40-page requirement]
+
+Requirement Gathering
+
+Functional Requirements:
+
+Table 1.1: Core Functional Requirements
+
+Requirement Category | Features
+--------------------|----------
+User Management    | - User registration and authentication
+                   | - Email verification
+                   | - Password reset functionality
+Movie Management   | - CRUD operations for movies
+                   | - Movie search and filtering
+                   | - Movie details and trailer viewing
+Theater Management | - Theater registration and management
+                   | - Screen and seat configuration
+                   | - Show scheduling
+Booking System     | - Seat selection
+                   | - Payment processing
+                   | - E-ticket generation
+                   | - Booking history
+Partner Dashboard  | - Theater performance metrics
+                   | - Revenue analytics
+                   | - Show management
+Admin Controls     | - Theater approval system
+                   | - Content moderation
+                   | - System monitoring
+
+Non-Functional Requirements:
+
+1. Performance
+- Page load time < 3 seconds
+- Concurrent user support
+- Response time < 1 second for transactions
+
+2. Security
+- Encrypted password storage
+- Secure payment processing
+- JWT-based authentication
+- Rate limiting for API endpoints
+
+3. Scalability
+- Horizontal scaling capability
+- Microservices architecture
+- Cloud-ready deployment
+
+Use Case Diagram:
+[Insert use case diagram showing user interactions]
+
+Payments Integration
+
+The project integrates Razorpay for secure payment processing, following these steps:
+
+1. Payment Flow:
+```javascript
+// Backend Order Creation
+const order = await razorpay.orders.create({
+    amount: totalAmount * 100,
+    currency: 'INR',
+    receipt: booking._id.toString()
+});
+
+// Frontend Payment Initiation
+const options = {
+    key: process.env.RAZORPAY_KEY_ID,
+    amount: order.amount,
+    currency: order.currency,
+    name: 'BookMyShow Clone',
+    order_id: order.id,
+    handler: response => {
+        // Handle payment success
+    }
+};
+```
+
+Security measures implemented:
+- PCI DSS compliance through Razorpay
+- Webhook signature verification
+- SSL/TLS encryption
+- Payment data sanitization
+
+Security
+
+1. Password Security:
+```javascript
+// Password hashing using bcrypt
+userSchema.pre('save', async function(next) {
+    if (!this.isModified('password')) return next();
+    const salt = await bcrypt.genSalt(10);
+    this.password = await bcrypt.hash(this.password, salt);
+    next();
+});
+```
+
+2. API Security:
+- Rate limiting using express-rate-limit
+- Request sanitization with express-mongo-sanitize
+- Security headers with helmet
+- CORS configuration
+
+3. Authentication:
+- JWT-based token authentication
+- Role-based access control
+- Session management
+
+Deployment Flow
+
+1. Version Control:
+- GitHub repository management
+- Feature branch workflow
+- Pull request reviews
+
+2. Deployment Architecture:
+- Frontend: Vercel/Netlify
+- Backend: Render
+- Database: MongoDB Atlas
+- Media Storage: AWS S3
+
+3. CI/CD Pipeline:
+- Automated testing
+- Build verification
+- Deployment automation
+
+Technologies Used
+
+1. Frontend:
+- React.js for UI components
+- Redux for state management
+- Material-UI for styling
+- Axios for API calls
+
+2. Backend:
+- Node.js runtime
+- Express.js framework
+- MongoDB database
+- JWT authentication
+
+3. Cloud Services:
+- AWS S3 for media storage
+- MongoDB Atlas for database
+- Render for backend hosting
+- Vercel for frontend hosting
+
+4. Development Tools:
+- Git for version control
+- VS Code IDE
+- Postman for API testing
+- MongoDB Compass for database management
+
+Conclusion
+
+Key Takeaways:
+- Practical experience with full-stack development
+- Understanding of e-commerce systems
+- Implementation of security best practices
+- Real-world payment integration experience
+
+Practical Applications:
+- Scalable booking system architecture
+- Secure payment processing implementation
+- Cloud-based media management
+- User authentication and authorization
+
+Limitations and Future Improvements:
+- Add support for multiple payment gateways
+- Implement real-time seat booking updates
+- Add analytics dashboard
+- Enhance mobile responsiveness
+
+References
+
+1. MongoDB Documentation, https://docs.mongodb.com/
+2. React Documentation, https://reactjs.org/docs/
+3. Razorpay Documentation, https://razorpay.com/docs/
+4. AWS S3 Documentation, https://docs.aws.amazon.com/s3/
+5. Express.js Documentation, https://expressjs.com/
+6. Material-UI Documentation, https://mui.com/
+7. JWT.io Documentation, https://jwt.io/
+8. Node.js Documentation, https://nodejs.org/docs/ 

@@ -1,0 +1,36 @@
+┌─────────────────────┐      ┌─────────────────────┐
+│        User         │      │       Movie         │
+├─────────────────────┤      ├─────────────────────┤
+│ _id: ObjectId      │      │ _id: ObjectId       │
+│ name: String       │      │ title: String       │
+│ email: String      │      │ description: String │
+│ password: String   │      │ releaseDate: Date   │
+│ role: String       │      │ duration: Number    │
+│ isVerified: Boolean│      │ genre: [String]     │
+└─────────┬───────────┘      │ poster: String      │
+          │                  └──────────┬──────────┘
+          │                             │
+          │                             │
+┌─────────┴───────────┐      ┌─────────┴──────────┐
+│      Theater        │      │        Show         │
+├───────────────────┬─┤      ├────────────────────┤
+│ _id: ObjectId    │ │      │ _id: ObjectId      │
+│ name: String     │ │      │ movieId: ObjectId   │
+│ location: Object │ │      │ theaterId: ObjectId │
+│ screens: [Object]│ │      │ screen: Number      │
+│ partner: ObjectId│ │      │ date: Date         │
+│ isApproved: Bool │ │      │ startTime: String  │
+└─────────┬─────────┘ │      │ seats: [Object]    │
+          │           │      └──────────┬─────────┘
+          │           │                 │
+          │           │                 │
+┌─────────┴───────────┐      ┌─────────┴──────────┐
+│      Booking        │      │      Payment       │
+├───────────────────┬─┤      ├────────────────────┤
+│ _id: ObjectId    │ │      │ _id: ObjectId      │
+│ userId: ObjectId │ │      │ bookingId: ObjectId│
+│ showId: ObjectId │ │      │ amount: Number     │
+│ seats: [Object]  │ │      │ status: String     │
+│ totalAmount: Num │ │      │ paymentId: String  │
+│ status: String   │ │      │ timestamp: Date    │
+└─────────────────────┘      └────────────────────┘ 

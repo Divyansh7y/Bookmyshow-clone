@@ -1,0 +1,22 @@
+                                    ┌─────────────────┐
+                                    │    BookMyShow    │
+                                    │      System      │
+                                    └────────┬────────┘
+                                             │
+     ┌──────────────────────────────────────┼──────────────────────────────────┐
+     │                                      │                                   │
+┌────┴─────┐                          ┌────┴─────┐                      ┌─────┴────┐
+│  User    │                          │ Partner  │                      │  Admin   │
+└────┬─────┘                          └────┬─────┘                      └─────┬────┘
+     │                                     │                                  │
+     ├──────► Register/Login               ├──────► Manage Theaters          ├──────► Approve Theaters
+     │                                     │                                  │
+     ├──────► Browse Movies               ├──────► Schedule Shows           ├──────► Manage Movies
+     │                                     │                                  │
+     ├──────► Book Tickets               ├──────► View Revenue             ├──────► View Reports
+     │                                     │                                  │
+     ├──────► Select Seats               ├──────► Manage Screens           ├──────► Manage Users
+     │                                     │                                  │
+     ├──────► Make Payment               ├──────► Set Pricing              ├──────► System Config
+     │                                     │                                  │
+     └──────► View Bookings              └──────► View Bookings           └──────► Monitor System 

@@ -1,0 +1,20 @@
+┌──────────────────┐     ┌──────────────────┐     ┌──────────────────┐
+│   Client Layer   │     │  Application    │     │   Data Layer    │
+│   (Frontend)     │     │     Layer       │     │   (Storage)     │
+└────────┬─────────┘     └────────┬─────────┘     └────────┬─────────┘
+         │                        │                         │
+         ▼                        ▼                         ▼
+┌──────────────────┐     ┌──────────────────┐     ┌──────────────────┐
+│  React.js App    │     │   Express.js     │     │    MongoDB       │
+│  - Components    │     │   REST API       │     │    Database      │
+│  - Redux Store   │◄───►│   - Auth         │◄───►│    - Users       │
+│  - Material UI   │     │   - Movies       │     │    - Movies      │
+│  - React Router  │     │   - Theaters     │     │    - Theaters    │
+└────────┬─────────┘     └────────┬─────────┘     └────────┬─────────┘
+         │                        │                         │
+         ▼                        ▼                         ▼
+┌──────────────────┐     ┌──────────────────┐     ┌──────────────────┐
+│  External APIs   │     │   Middleware     │     │  Cloud Storage   │
+│  - Razorpay     │     │   - Auth         │     │   (AWS S3)       │
+│  - Email Service │     │   - Validation   │     │   - Movie Posters│
+└──────────────────┘     └──────────────────┘     └──────────────────┘ 
